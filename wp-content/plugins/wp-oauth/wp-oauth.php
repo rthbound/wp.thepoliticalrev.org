@@ -11,7 +11,9 @@ License: GPL2
 */
 
 // start the user session for persisting user/login state during ajax, header redirect, and cross domain calls:
-session_start();
+if (!isset($_SESSION)) {
+    session_start();
+}
 
 // plugin class:
 Class WPOA {
@@ -54,8 +56,8 @@ Class WPOA {
 				'align' => 'center',
 				'show_login' => 'conditional',
 				'show_logout' => 'conditional',
-				'button_prefix' => 'Login with',
-				'logged_out_title' => 'Please login:',
+				'button_prefix' => 'Log in with',
+				'logged_out_title' => 'Please log in:',
 				'logged_in_title' => 'You are already logged in.',
 				'logging_in_title' => 'Logging in...',
 				'logging_out_title' => 'Logging out...',
@@ -91,6 +93,9 @@ Class WPOA {
 		'wpoa_github_api_enabled' => 0,									// 0, 1
 		'wpoa_github_api_id' => '',										// any string
 		'wpoa_github_api_secret' => '',									// any string
+		'wpoa_itembase_api_enabled' => 0,								// 0, 1
+		'wpoa_itembase_api_id' => '',									// any string
+		'wpoa_itembase_api_secret' => '',								// any string
 		'wpoa_reddit_api_enabled' => 0,									// 0, 1
 		'wpoa_reddit_api_id' => '',										// any string
 		'wpoa_reddit_api_secret' => '',									// any string
@@ -107,6 +112,16 @@ Class WPOA {
 		'wpoa_battlenet_api_enabled' => 0,								// 0, 1
 		'wpoa_battlenet_api_id' => '',									// any string
 		'wpoa_battlenet_api_secret' => '',								// any string
+		'wpoa_slack_api_enabled' => 0,									// 0, 1
+		'wpoa_slack_api_id' => '',										// any string
+		'wpoa_slack_api_secret' => '',									// any string
+		
+		'wpoa_oauth_server_api_enabled' => 0,							// 0, 1
+		'wpoa_oauth_server_api_id' => '',								// any string
+		'wpoa_oauth_server_api_secret' => '',							// any string
+		'wpoa_oauth_server_api_endpoint' => '',							// any string
+		'wpoa_oauth_server_api_button_text' => '',						// any string
+
 		'wpoa_http_util' => 'curl',										// curl, stream-context
 		'wpoa_http_util_verify_ssl' => 1,								// 0, 1
 		'wpoa_restore_default_settings' => 0,							// 0, 1
@@ -272,7 +287,6 @@ Class WPOA {
 			'plugins_url' => plugins_url(),
 			'plugin_dir_url' => plugin_dir_url(__FILE__),
 			'url' => get_bloginfo('url'),
-			// other:
 			'show_login_messages' => get_option('wpoa_show_login_messages'),
 			'logout_inactive_users' => get_option('wpoa_logout_inactive_users'),
 			'logged_in' => is_user_logged_in(),
@@ -290,6 +304,11 @@ Class WPOA {
 	
 	// init scripts and styles for use on the LOGIN PAGE:
 	function wpoa_init_login_scripts_styles() {
+		if (isset($_SESSION['WPOA']['RESULT'])) {
+			$login_message = $_SESSION['WPOA']['RESULT'];
+		} else {
+			$login_message = '';
+		}
 		// here we "localize" php variables, making them available as a js variable in the browser:
 		$wpoa_cvars = array(
 			// basic info:
@@ -303,7 +322,7 @@ Class WPOA {
 			'hide_login_form' => get_option('wpoa_hide_wordpress_login_form'),
 			'logo_image' => get_option('wpoa_logo_image'),
 			'bg_image' => get_option('wpoa_bg_image'),
-			'login_message' => $_SESSION['WPOA']['RESULT'],
+			'login_message' => $login_message,
 			'show_login_messages' => get_option('wpoa_show_login_messages'),
 			'logout_inactive_users' => get_option('wpoa_logout_inactive_users'),
 			'logged_in' => is_user_logged_in(),
@@ -384,7 +403,9 @@ Class WPOA {
 		global $wpdb;
 		$usermeta_table = $wpdb->usermeta;
 		$query_string = "SELECT $usermeta_table.user_id FROM $usermeta_table WHERE $usermeta_table.meta_key = 'wpoa_identity' AND $usermeta_table.meta_value LIKE '%" . $oauth_identity['provider'] . "|" . $oauth_identity['id'] . "%'";
+		//print_r( $query_string ); exit;
 		$query_result = $wpdb->get_var($query_string);
+		//print_r( $query_result ); exit;
 		// attempt to get a wordpress user with the matched id:
 		$user = get_user_by('id', $query_result);
 		return $user;
@@ -543,9 +564,11 @@ Class WPOA {
 	
 	// pushes login messages into the dom where they can be extracted by javascript:
 	function wpoa_push_login_messages() {
-		$result = $_SESSION['WPOA']['RESULT'];
+		if (isset($_SESSION['WPOA']['RESULT'])) {
+			$result = $_SESSION['WPOA']['RESULT'];
+			echo "<div id='wpoa-result'>" . $result . "</div>";
+		}
 		$_SESSION['WPOA']['RESULT'] = '';
-		echo "<div id='wpoa-result'>" . $result . "</div>";
 	}
 	
 	// clears the login state:
@@ -687,6 +710,7 @@ Class WPOA {
 	function wpoa_login_buttons($icon_set, $button_prefix) {
 		// generate the atts once (cache them), so we can use it for all buttons without computing them each time:
 		$site_url = get_bloginfo('url');
+		if( force_ssl_admin() ) { $site_url = set_url_scheme( $site_url, 'https' ); }
 		$redirect_to = urlencode($_GET['redirect_to']);
 		if ($redirect_to) {$redirect_to = "&redirect_to=" . $redirect_to;}
 		// get shortcode atts that determine how we should build these buttons:
@@ -702,14 +726,17 @@ Class WPOA {
 		// TODO: don't hard-code the buttons/providers here, we want to be able to add more providers without having to update this function...
 		$html = "";
 		$html .= $this->wpoa_login_button("google", "Google", $atts);
+		$html .= $this->wpoa_login_button("slack", "Slack", $atts);
 		$html .= $this->wpoa_login_button("facebook", "Facebook", $atts);
 		$html .= $this->wpoa_login_button("linkedin", "LinkedIn", $atts);
 		$html .= $this->wpoa_login_button("github", "GitHub", $atts);
+		$html .= $this->wpoa_login_button("itembase", "itembase", $atts);
 		$html .= $this->wpoa_login_button("reddit", "Reddit", $atts);
 		$html .= $this->wpoa_login_button("windowslive", "Windows Live", $atts);
 		$html .= $this->wpoa_login_button("paypal", "PayPal", $atts);
 		$html .= $this->wpoa_login_button("instagram", "Instagram", $atts);
 		$html .= $this->wpoa_login_button("battlenet", "Battlenet", $atts);
+		$html .= $this->wpoa_login_button( 'oauth_server' , get_option( 'wpoa_oauth_server_api_button_text' ), $atts );
 		if ($html == '') {
 			$html .= 'Sorry, no login providers have been enabled.';
 		}
