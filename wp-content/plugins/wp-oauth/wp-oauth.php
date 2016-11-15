@@ -272,7 +272,7 @@ Class WPOA {
 		// we always need jquery:
 		wp_enqueue_script('jquery');
 		// load the core plugin scripts/styles:
-		wp_enqueue_script('wpoa-script', plugin_dir_url( __FILE__ ) . 'wp-oauth.js', array());
+		wp_enqueue_script('wpoa-script', plugin_dir_url( __FILE__ ) . 'wp-oauth.js', array(), false, true);
 		wp_enqueue_style('wpoa-style', plugin_dir_url( __FILE__ ) . 'wp-oauth.css', array());
 	}
 	
@@ -296,7 +296,7 @@ Class WPOA {
 		// we always need jquery:
 		wp_enqueue_script('jquery');
 		// load the core plugin scripts/styles:
-		wp_enqueue_script('wpoa-script', plugin_dir_url( __FILE__ ) . 'wp-oauth.js', array());
+		wp_enqueue_script('wpoa-script', plugin_dir_url( __FILE__ ) . 'wp-oauth.js', array(), false, true);
 		wp_enqueue_style('wpoa-style', plugin_dir_url( __FILE__ ) . 'wp-oauth.css', array());
 		// load the default wordpress media screen:
 		wp_enqueue_media();
@@ -332,7 +332,7 @@ Class WPOA {
 		// we always need jquery:
 		wp_enqueue_script('jquery');
 		// load the core plugin scripts/styles:
-		wp_enqueue_script('wpoa-script', plugin_dir_url( __FILE__ ) . 'wp-oauth.js', array());
+		wp_enqueue_script('wpoa-script', plugin_dir_url( __FILE__ ) . 'wp-oauth.js', array(), false, true);
 		wp_enqueue_style('wpoa-style', plugin_dir_url( __FILE__ ) . 'wp-oauth.css', array());
 	}
 	
