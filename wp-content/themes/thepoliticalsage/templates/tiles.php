@@ -6,9 +6,9 @@
 		</header>
 
 	<!-- </div> -->
-	<?php if ( have_posts() ) : ?>
-    <?php while ( have_posts() ) : the_post(); ?>
-      <?php if ( is_category("blog") ) : ?>
+	<?php $query = new WP_Query( [ 'post_type' => ['post'] ] );
+         if ( $query->have_posts() ) : ?>
+    <?php while ( $query->have_posts() ) : $query->the_post(); ?>
         <?php $img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full'); ?>
           <article>
                   <span class="image">
@@ -19,6 +19,5 @@
                           <p><?php the_excerpt(); ?></p>
                   </header>
           </article>
-        <?php endif; ?>
     <?php endwhile; ?>
 <?php endif; ?>

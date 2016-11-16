@@ -9,7 +9,7 @@
   "dependencies": {
     "FitText.js": "jquery-fittext#^1.2.0",
     "jquery.scrollex": "^0.2.1",
-    "font-awesome": "^4.7.0",
-    "components-font-awesome": "^4.7.0"
+    "components-font-awesome": "^4.7.0",
+    "font-awesome": "^4.7.0"
   }
 }
