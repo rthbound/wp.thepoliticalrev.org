@@ -12,79 +12,8 @@ patches and features.
 <a name="standards"></a>
 ## Coding and Contributing Guidelines
 
-### PHP
-
-[PSR-2 coding style](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md) with the following changes:
-
-* 2 spaces indentation
-* Opening and closing braces for functions and classes forced on the same line
-* Forced newline after opening brace
-
-Additional rules:
-
-* Use `Roots\` namespace
-* Use short array syntax
-* Use short echo syntax
-
-You can check if your contribution passes the styleguide by installing [PHP CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) and running the following in your project directory:
-
-```bash
-phpcs --standard=ruleset.xml --extensions=php --ignore=node_modules,bower_components,vendor -n -s .
-```
-
-### JavaScript
-
-Every JavaScript contribution is run against the [Google JavaScript Styleguide](https://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml). You can check if your contribution passes the styleguide by installing [JSCS](http://jscs.info/) and running the following in your project directory:
-
-```bash
-npm run jscs
-```
-
-
-## Using the Issue Tracker
-
-The issue tracker is the preferred channel for [bug reports](#bugs),
-[features requests](#features) and [submitting pull
-requests](#pull-requests), but please respect the following restrictions:
-
-* Please **do not** use the issue tracker for personal support requests.
-
-* Please **do not** derail or troll issues. Keep the discussion on topic and
-  respect the opinions of others.
-
-
-<a name="bugs"></a>
-## Bug Reports
-
-A bug is a _demonstrable problem_ that is caused by the code in the repository.
-Good bug reports are extremely helpful - thank you!
-
-Guidelines for bug reports:
-
-1. **Use the GitHub issue search** &mdash; check if the issue has already been
-   reported.
-
-2. **Check if the issue has been fixed** &mdash; try to reproduce it using the
-   latest `master` or development branch in the repository.
-
-3. **Isolate the problem** &mdash; make sure that the code in the repository is
-_definitely_ responsible for the issue.
-
-A good bug report shouldn't leave others needing to chase you up for more
-information. Please try to be as detailed as possible in your report.
-
-
-<a name="features"></a>
-## Feature Requests
-
-Feature requests are welcome. But take a moment to find out whether your idea
-fits with the scope and aims of the project. It's up to *you* to make a strong
-case to convince the maintainers of the merits of this feature. Please
-provide as much detail and context as possible.
-
-
 <a name="pull-requests"></a>
-## Pull Requests
+### Pull Requests
 
 Good pull requests - patches, improvements, new features - are a fantastic
 help. They should remain focused in scope and avoid containing unrelated
@@ -147,3 +76,76 @@ merged:
 
 10. [Open a Pull Request](https://help.github.com/articles/using-pull-requests/)
     with a clear title and description.
+
+### PHP Style
+
+[PSR-2 coding style](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md) with the following changes:
+
+* 2 spaces indentation
+* Opening and closing braces for functions and classes forced on the same line
+* Forced newline after opening brace
+
+Additional rules:
+
+* Use `Roots\` namespace
+* Use short array syntax
+* Use short echo syntax
+
+You can check if your contribution passes the styleguide by installing [PHP CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) and running the following in your project directory:
+
+```bash
+phpcs --standard=ruleset.xml --extensions=php --ignore=node_modules,bower_components,vendor -n -s .
+```
+
+### JavaScript
+
+Please adhere to the [Google JavaScript Styleguide](https://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml). You can check if your contribution passes the styleguide by installing [JSCS](http://jscs.info/) and running the following in your project directory:
+
+```bash
+npm run jscs
+```
+
+
+## Using the Issue Tracker
+
+The issue tracker is the preferred channel for [bug reports](#bugs),
+[features requests](#features) and [submitting pull
+requests](#pull-requests), but please respect the following restrictions:
+
+* Please **do not** use the issue tracker for personal support requests.
+
+* Please **do not** derail or troll issues. Keep the discussion on topic and
+  respect the opinions of others.
+
+
+<a name="bugs"></a>
+## Bug Reports
+
+A bug is a _demonstrable problem_ that is caused by the code in the repository.
+Good bug reports are extremely helpful - thank you!
+
+Guidelines for bug reports:
+
+1. **Use the GitHub issue search** &mdash; check if the issue has already been
+   reported.
+
+2. **Check if the issue has been fixed** &mdash; try to reproduce it using the
+   latest `master` or development branch in the repository.
+
+3. **Isolate the problem** &mdash; make sure that the code in the repository is
+_definitely_ responsible for the issue.
+
+A good bug report shouldn't leave others needing to chase you up for more
+information. Please try to be as detailed as possible in your report.
+
+
+<a name="features"></a>
+## Feature Requests
+
+Feature requests are welcome. But take a moment to find out whether your idea
+fits with the scope and aims of the project. It's up to *you* to make a strong
+case to convince the maintainers of the merits of this feature. Please
+provide as much detail and context as possible.
+
+
+
