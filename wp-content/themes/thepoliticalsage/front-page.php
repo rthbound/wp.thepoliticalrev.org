@@ -1,0 +1,47 @@
+<!-- Banner -->
+<?php $img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full'); ?>
+
+<section id="banner" class="major" role="banner" style="background-image: url(<?= $img[0] ?>);">
+  <div class="inner">
+    <header class="major">
+      <h1>{{ page.landing-title }}</h1>
+    </header>
+    <div class="content">
+      <p>Change can only take place when people get involved in the political process. Sign up now and join the revolution!</p>
+      <form id="email-signup" autocomplete="on" method="post" action="https://tinyletter.com/ThePoliticalRevolution">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="sen.sanders@gmail.com" autofocus/>
+        <button type="submit" class="important">Join Us</button>
+      </form>
+      <!-- <ul class="actions">
+        <li><a href="#one" class="button next scrolly">More</a></li>
+      </ul> -->
+    </div>
+  </div>
+</section>
+
+<!-- Main -->
+<div role="main" id="main">
+
+  <!-- Two -->
+  <section id="two">
+    <div class="inner">
+      <header class="major">
+        <h2>Let's do this</h2>
+      </header>
+
+      With your help, we can build a better United States for everyone, not just the top one percent.
+
+      <ul class="actions">
+        <li><a href="{{ site.baseurl }}/fight" class="button next">Get Started</a></li>
+      </ul>
+    </div>
+  </section>
+</div>
+<!-- One -->
+{% include tiles.html %}
+
+
+</body>
+
+</html>
