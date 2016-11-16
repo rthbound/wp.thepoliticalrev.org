@@ -39,8 +39,7 @@
   </section>
 </div>
 <!-- One -->
-{% include tiles.html %}
-
+<?php get_template_part('templates/tiles'); ?>
 
 </body>
 
