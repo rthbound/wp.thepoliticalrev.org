@@ -26,3 +26,5 @@ foreach ($sage_includes as $file) {
   require_once $filepath;
 }
 unset($file, $filepath);
+
+add_theme_support( 'post-thumbnails' );
