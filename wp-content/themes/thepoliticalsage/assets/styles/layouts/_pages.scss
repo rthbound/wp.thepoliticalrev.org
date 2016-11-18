@@ -1,0 +1,61 @@
+@media (min-width: 700px) {
+    .responsive-text {
+        font-size: calc(14px + .5em);
+    }
+}
+
+.page>h1 {
+    text-align: center;
+    font-size: 3.5em;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: .5em;
+}
+
+.page>.text-wrapper * {
+    color: #052a48;
+}
+
+.letterhead {
+    position: absolute;
+    left: 0;
+    top: 1em;
+    width: 100%;
+    border-top: 3px solid #052a48;
+    border-bottom: 3px solid #052a48;
+    height: 1.5em;
+    overflow: visible;
+    text-align: center;
+    margin: .75em 3em 3em 0;
+}
+
+.letterhead img {
+    height: 3.9em;
+    margin: -1.3em 0 0;
+}
+
+.page>.text-wrapper {
+    background: #f7f7f7;
+    position: relative;
+    padding-top: 5.1em;
+    margin: 0 auto;
+    padding: 2em 1.7em !important
+}
+
+@media (min-width: 500px) {
+    .text-wrapper {
+        padding: 2em 2em;
+    }
+}
+
+
+.letterhead .star {
+    margin: .5% 3%;
+    font-size: 1em;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.fa-star:before {
+    content: "\f005";
+}
