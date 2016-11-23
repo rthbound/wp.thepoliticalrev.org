@@ -14,7 +14,7 @@
 <div id="wrapper">
 
 	<!-- Header -->
-	<header id="header"{% if page.layout == "landing" %} class="alt"{% endif %}{% if page.layout == "home" %} class="alt"{% endif %}>
+	<header id="header">
 		<a href="<?= home_url(); ?>" class="logo"><strong><?php bloginfo('name'); ?></strong> <span><?php bloginfo('description'); ?></span></a>
 		<nav>
 			<a href="#menu">Menu</a>

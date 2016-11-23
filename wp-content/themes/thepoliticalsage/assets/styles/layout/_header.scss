@@ -137,7 +137,7 @@
 			}
 		}
 
-		&.alt {
+		body.home & {
 			@include vendor('transition', 'opacity #{_duration(banner)} ease');
 			@include vendor('transition-delay', '0.75s');
 			@include vendor('animation', 'none');
