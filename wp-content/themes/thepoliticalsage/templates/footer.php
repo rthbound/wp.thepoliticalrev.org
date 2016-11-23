@@ -22,11 +22,4 @@
 				<!-- <li>Design: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li> -->
 
 			</ul>
-			<?php if (is_page() && !is_front_page()) : ?>
-				<script>
-					jQuery(document).ready(function($){
-						$("#responsive_headline").fitText(0.7, { minFontSize: '20px', maxFontSize: '100px' });
-					});
-				</script>
-			<?php endif; ?>
 	</footer>

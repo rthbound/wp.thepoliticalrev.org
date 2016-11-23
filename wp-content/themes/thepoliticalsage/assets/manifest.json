@@ -32,6 +32,11 @@
         "scripts/skel.min.js"
       ]
     },
+    "responsive-title.js": {
+      "files": [
+        "scripts/responsive-title.js"
+      ]
+    },
     "jquery.scrolly.min.js": {
       "files": [
         "scripts/jquery.scrolly.min.js"
