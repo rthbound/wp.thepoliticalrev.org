@@ -14,7 +14,7 @@
 <div id="wrapper">
 
 	<!-- Header -->
-	<header id="header">
+	<header id="header" <?php if (is_front_page()) echo "class=\"alt\""; ?>>
 		<a href="<?= home_url(); ?>" class="logo"><strong><?php bloginfo('name'); ?></strong> <span><?php bloginfo('description'); ?></span></a>
 		<nav>
 			<a href="#menu">Menu</a>
