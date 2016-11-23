@@ -11,9 +11,7 @@
       <?php get_template_part('templates/entry-meta'); ?>
     </header>
     </div>
-    <div class="entry-content">
-    <div class="container-fluid">
-      <div class="col-md-8 text-wrapper">
+      <article class="text-wrapper">
       <?php the_content(); ?>
       <hr />
       <p>You can comment, follow, and read more from the Political Revolution on <a href="http://www.medium.com/@OurPoliticaRev" target="_blank">Medium</a>. 
@@ -23,12 +21,12 @@
           Tweet
         </a>
       </p>
-      </div>
-    </div>
+      </article>
     <!--<footer>
       <?php //wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); ?>
     </footer>
     <?php //comments_template('/templates/comments.php'); ?>-->
+    <aside class="sidebar"><?php get_template_part('templates/sidebar'); ?></aside>
   </main>
   
 <?php endwhile; ?>
