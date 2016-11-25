@@ -10,6 +10,7 @@
     </nav>
   </div>
 </header> -->
+
 <!-- Wrapper -->
 <div id="wrapper">
 
@@ -34,4 +35,6 @@
 			<!-- <li><a href="{{ site.url }}{{ site.baseurl }}/contact.html" class="button fit">Contact Us</a></li> -->
 		</ul>
 	</nav>
-</div>
+
+    <!-- Main -->
+    <main>

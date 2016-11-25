@@ -4,7 +4,7 @@
 <section id="banner" class="major" role="banner" style="background-image: url(<?= $img[0] ?>);">
   <div class="inner">
     <header class="major">
-      <h1>{{ page.landing-title }}</h1>
+      <!-- <h1>{{ page.landing-title }}</h1> -->
     </header>
     <div class="content">
       <p>Change can only take place when people get involved in the political process. Sign up now and join the revolution!</p>
