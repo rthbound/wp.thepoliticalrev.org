@@ -1,14 +1,23 @@
-<?php get_template_part('templates/page', 'header'); ?>
+<!-- Banner -->
+<?php $img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full'); ?>
 
-<?php if (!have_posts()) : ?>
-  <div class="alert alert-warning">
-    <?php _e('Sorry, no results were found.', 'sage'); ?>
-  </div>
-  <?php get_search_form(); ?>
-<?php endif; ?>
+<section id="banner" class="major" style="background-position: center 0px; background-image: url(http://i.huffpost.com/gen/3431754/images/o-BERNIE-SANDERS-facebook.jpg);">
+    <div class="inner">
+        <!-- <span class="image" style="display: none;">
+            <img src="images/pic07.jpg" alt="">
+        </span> -->
+        <header class="major">
+            <?php get_template_part('templates/page', 'header'); ?>
+        </header>
+        <div class="content">
+            <p>Lorem ipsum dolor sit amet nullam consequat<br>
+            sed veroeros. tempus adipiscing nulla.</p>
+        </div>
+    </div>
+</section>
 
-<?php while (have_posts()) : the_post(); ?>
-  <?php get_template_part('templates/content', get_post_type() != 'post' ? get_post_type() : get_post_format()); ?>
-<?php endwhile; ?>
+<!-- Main -->
+<main>
 
-<?php the_posts_navigation(); ?>
+<!-- One -->
+<?php get_template_part('templates/tiles'); ?>
