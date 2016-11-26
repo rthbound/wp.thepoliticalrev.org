@@ -14,46 +14,26 @@ jumping into the code to give your work the highest chance of being merged.
 
 Make sure all dependencies have been installed before moving on:
 
-* [PHP](http://php.net/manual/en/install.php) >= 7.x
-* [Composer](https://getcomposer.org/download/) >= 1.1
 * [Node.js](http://nodejs.org/) >= 4.5
-* [gulp](http://gulpjs.com/) >= 3.8.10
-* [Bower](http://bower.io/) >= 1.3.12
+  * update to the latest version of npm: `npm install -g npm@latest`.
+* [Docker Engine](https://docs.docker.com/engine/installation/#on-linux) for your platform
 
 
 ## Installation
 
-Installation is straight foward.
+Installation is straight-foward.
 
 1. Clone the repository.
-2. Set the root/webroot to the repository folder.
-3. Navigate to http://localhost:8080/ and follow the instructions.
+1. Install [gulp](http://gulpjs.com) and [Bower](http://bower.io/) globally with `npm install -g gulp bower`
+2. In the root of the project, run `npm run-script build && npm start`.
+3. Navigate to http://localhost:8080/ and follow the instructions to create your local dev environment.
 
-A pre-populated database is not currently being provided.
-
-
-## Theme setup
-
-Edit `lib/setup.php` to enable or disable theme features, setup navigation menus, post thumbnail sizes, post formats, and sidebars.
-
+A pre-populated database is not currently being provided. However, after setting up Wordpress for the first time, the database changes you make will be persisted in a Docker [data volume](https://docs.docker.com/engine/tutorials/dockervolumes/#data-volumes)
+ until/unless you delete it. We plan to provide a pre-populated sample database in the future.
 
 ## Theme development
 
 Sage uses [gulp](http://gulpjs.com/) as its build system and [Bower](http://bower.io/) to manage front-end packages.
-
-
-### Install gulp and Bower
-
-Building the theme requires [node.js](http://nodejs.org/download/). We recommend you update to the latest version of npm: `npm install -g npm@latest`.
-
-From the command line:
-
-1. Install [gulp](http://gulpjs.com) and [Bower](http://bower.io/) globally with `npm install -g gulp bower`
-2. Navigate to the theme directory, then run `npm install`
-3. Run `bower install`
-
-You now have all the necessary dependencies to run the build process.
-
 
 ### Available gulp commands
 
@@ -61,32 +41,9 @@ You now have all the necessary dependencies to run the build process.
 * `gulp watch` — Compile assets when file changes are made
 * `gulp --production` — Compile assets for production (no source maps).
 
-
-### Using BrowserSync
-
-To use BrowserSync during `gulp watch` you need to update `devUrl` at the bottom of `assets/manifest.json` to reflect your local development hostname.
-
-For example, if your local development URL is `http://project-name.dev` you would update the file to read:
-```json
-...
-  "config": {
-    "devUrl": "http://project-name.dev"
-  }
-...
-```
-If your local development URL looks like `http://localhost:8888/project-name/` you would update the file to read:
-```json
-...
-  "config": {
-    "devUrl": "http://localhost:8888/project-name/"
-  }
-...
-```
-
-
 ## Documentation
 
-Detailed documentation for this project will is located in the [docs/](https://github.com/politicalrev/wp.thepoliticalrev.org/tree/master/docs) folder.
+Detailed documentation for this project will be located in the [docs/](https://github.com/politicalrev/wp.thepoliticalrev.org/tree/master/docs) folder.
 
 Sage 8.5 documentation is available at [https://roots.io/sage/docs/](https://roots.io/sage/docs/).
 

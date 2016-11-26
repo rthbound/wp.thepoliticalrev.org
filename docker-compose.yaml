@@ -4,6 +4,8 @@ services:
     image: mariadb
     ports:
       - "8081:3306"
+    volumes:
+      - my-datavolume:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: ChangeMeIfYouWant
   my-wp:
@@ -16,3 +18,5 @@ services:
       - my-wpdb:mysql
     environment:
       WORDPRESS_DB_PASSWORD: ChangeMeIfYouWant
+volumes:
+  my-datavolume:

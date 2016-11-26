@@ -1,7 +1,7 @@
 <!-- Banner -->
 <?php $img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full'); ?>
 
-<section id="banner" class="major" role="banner" style="background-image: url(<?= $img[0] ?>);">
+<section id="banner" class="major" role="banner" style="background-image: url(<?= get_template_directory_uri(); ?>/assets/images/background-polrev-compressed.png);">
   <div class="inner">
     <header class="major">
       <h1>{{ page.landing-title }}</h1>

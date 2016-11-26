@@ -1,0 +1,25 @@
+{
+  "name": "wp.thepoliticalrev.org",
+  "version": "1.0.0",
+  "description": "Welcome to the Github repository for The Political Revolution's Wordpress setup. It is built upon the [Sage 8.5](https://github.com/roots/sage/releases/latest) starter theme and sports a modern development workflow.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cd wp-content/themes/thepoliticalsage && npm install && npm run-script build",
+    "start": "docker-compose up -d && cd wp-content/themes/thepoliticalsage && npm install && gulp watch",
+    "stop": "docker-compose down"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/politicalrev/wp.thepoliticalrev.org.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/politicalrev/wp.thepoliticalrev.org/issues"
+  },
+  "homepage": "https://github.com/politicalrev/wp.thepoliticalrev.org#readme"
+}
