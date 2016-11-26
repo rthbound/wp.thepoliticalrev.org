@@ -28,6 +28,8 @@ Installation is straight-foward.
 2. In the root of the project, run `npm run-script build && npm start`.
 3. Navigate to http://localhost:8080/ and follow the instructions to create your local dev environment.
 
+`npm start` runs gulp watch and starts the docker development server. Stopping gulp with `ctrl + C` and running `npm stop` will spin down your dev processes. To attach to the terminal of the local dev server, you may run `docker exec -it wpthepoliticalrevorg_my-wp_1 /bin/bash`. 
+
 A pre-populated database is not currently being provided. However, after setting up Wordpress for the first time, the database changes you make will be persisted in a Docker [data volume](https://docs.docker.com/engine/tutorials/dockervolumes/#data-volumes)
  until/unless you delete it. We plan to provide a pre-populated sample database in the future.
 
