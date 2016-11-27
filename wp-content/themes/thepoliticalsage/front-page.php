@@ -30,7 +30,7 @@
         <h2>Let's do this</h2>
       </header>
 
-      With your help, we can build a better United States for everyone, not just the top one percent.
+      <p>With your help, we can build a better United States for everyone, not just the top one percent.</p>
 
       <ul class="actions">
         <li><a href="{{ site.baseurl }}/fight" class="button next">Get Started</a></li>

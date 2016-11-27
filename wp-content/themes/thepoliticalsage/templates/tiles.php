@@ -1,9 +1,12 @@
 <section id="one" class="tiles">
 	<!-- <div class="inner"> -->
-		<header class="major">
+        <?php if (is_front_page()) : ?>
+                <header class="major">
 			<h2>Latest Posts</h2>
 			<p>Updates on candidates and issues you care about.</p>
+                        <a href="articles/" class="button special">All Articles</a>
 		</header>
+        <?php endif; ?>
 
 	<!-- </div> -->
 	<?php $query = new WP_Query( [ 'post_type' => ['post'] ] );
