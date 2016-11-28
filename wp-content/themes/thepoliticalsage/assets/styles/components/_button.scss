@@ -21,6 +21,7 @@
 		border: 0;
 		border-radius: 0;
 		box-shadow: inset 0 0 0 2px _palette(fg-bold);
+		box-sizing: border-box;
 		color: _palette(fg-bold);
 		cursor: pointer;
 		display: inline-block;
