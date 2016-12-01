@@ -2,6 +2,7 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="GeEavsoPBp10LOO68IiuDH16WRABk-3TD1pSs5-dVXU" />
   <?php wp_head(); ?>
   <?php if (is_page_template('templates/template-petition.php')) : ?>
   
