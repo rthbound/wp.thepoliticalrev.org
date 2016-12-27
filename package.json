@@ -9,7 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cd wp-content/themes/thepoliticalsage && npm install && npm run-script build",
-    "start": "docker-compose up -d && cd wp-content/themes/thepoliticalsage && npm install && gulp watch",
+    "start": "docker-compose up -d && cd wp-content/themes/thepoliticalsage && npm install && bower install && gulp watch",
     "stop": "docker-compose down"
   },
   "repository": {
