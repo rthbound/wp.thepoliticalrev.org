@@ -47,7 +47,7 @@
     }
   },
   "config": {
-    "devUrl": "http://localhost:8888"
+    "devUrl": "http://127.0.0.1:8080"
   }
 }
 
