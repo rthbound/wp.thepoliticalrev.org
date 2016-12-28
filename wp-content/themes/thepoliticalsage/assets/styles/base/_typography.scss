@@ -6,6 +6,19 @@
 
 /* Type */
 
+	@font-face {
+		font-family: 'BigJohn';
+		src: url('BigJohn.eot');
+		src: url('BigJohn.woff2') format('woff2'),
+				url('BigJohn.woff') format('woff'),
+				url('BigJohn.ttf') format('truetype'),
+				url('BigJohn.svg#BigJohn') format('svg'),
+				url('BigJohn.eot?#iefix') format('embedded-opentype');
+		font-weight: normal;
+		font-style: normal;
+	}
+
+
 	body, input, select, textarea {
 		color: _palette(fg);
 		font-family: _font(family);
