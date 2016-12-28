@@ -8,12 +8,12 @@
 
 	@font-face {
 		font-family: 'BigJohn';
-		src: url('BigJohn.eot');
-		src: url('BigJohn.woff2') format('woff2'),
-				url('BigJohn.woff') format('woff'),
-				url('BigJohn.ttf') format('truetype'),
-				url('BigJohn.svg#BigJohn') format('svg'),
-				url('BigJohn.eot?#iefix') format('embedded-opentype');
+		src: url('../fonts/BigJohn.eot');
+		src: url('../fonts/BigJohn.woff2') format('woff2'),
+				url('../fonts/BigJohn.woff') format('woff'),
+				url('../fonts/BigJohn.ttf') format('truetype'),
+				url('../fonts/BigJohn.svg#BigJohn') format('svg'),
+				url('../fonts/BigJohn.eot?#iefix') format('embedded-opentype');
 		font-weight: normal;
 		font-style: normal;
 	}
@@ -67,6 +67,9 @@
 	strong, b {
 		color: _palette(fg-bold);
 		font-weight: _font(weight-bold);
+	}
+	strong {
+		font-family: _font(family-display);
 	}
 
 	em, i {
