@@ -25,7 +25,7 @@
 		}
 
 	body {
-		background: _palette(bg);
+		background: _palette(fg);
 
 		// Prevents animation/transition "flicker" on page load.
 		// Automatically added/removed by js/main.js.

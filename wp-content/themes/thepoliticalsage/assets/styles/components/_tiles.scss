@@ -156,6 +156,10 @@
 					background-color: _palette(accent6);
 				}
 			}
+
+			&:first-child {
+				background-color: _palette(bg);
+			}
 		}
 
 		@include breakpoint(large) {
