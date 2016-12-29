@@ -15,11 +15,19 @@
 <div id="wrapper">
 
 	<!-- Header -->
-	<header id="header" <?php if (is_front_page()) echo "class=\"alt\""; ?>>
-		<a href="<?= home_url(); ?>" class="logo"><strong><?php bloginfo('name'); ?></strong> <span><?php bloginfo('description'); ?></span></a>
-		<nav>
-			<a href="#menu">Menu</a>
+	<header id="header">
+		<a href="<?= home_url(); ?>" class="logo">
+      <img src="<?= get_stylesheet_directory_uri(); ?>/assets/images/logo-web.png" />
+    </a>
+		<nav id="responsive-menu">
+						<?php
+      if (has_nav_menu('primary_navigation')) :
+        wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'links']);
+      endif;
+      ?>
+			<a href="#menu">Menu<i class="fa fa-bars"></i></a>
 		</nav>
+    <a class="important button" target="_blank" href="https://secure.actblue.com/contribute/page/the-politicalrevolution">Donate</a>
 		
 	</header>
 

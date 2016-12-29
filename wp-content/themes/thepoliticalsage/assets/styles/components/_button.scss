@@ -138,6 +138,8 @@
 
 		&.important {
 			background: _palette(accent1);
+			border: 0;
+			box-shadow: none; 
 		}
 
 	}
