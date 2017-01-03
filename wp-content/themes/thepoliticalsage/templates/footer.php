@@ -26,7 +26,7 @@
             </div>
             <div>
                 <span class="copyright">&copy; <?= bloginfo('title'); ?> 2017</span>
-                <img src="<?= get_stylesheet_directory_uri(); ?>/assets/images/button.png" />
+                <img src="<?= get_stylesheet_directory_uri(); ?>/assets/images/button-100.png" />
                 <ul class="footernav">
                     <li>Contact Us</li>
                     <li>Search</li>
