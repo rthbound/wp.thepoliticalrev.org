@@ -7,12 +7,17 @@
 /* Header */
 
 	$side-margins: 3vw;
+	$header-height: 4rem;
 	
 	@include keyframes('reveal-header') {
 		0% { top: -4em; opacity: 0; }
 		100% { top: 0; opacity: 1; }
 	}
 
+	body {
+		margin-top: $header-height;
+	}
+	
 	#header {
 		display: flex;
 		align-items: center;
@@ -20,7 +25,7 @@
 		box-shadow: 0 0 0.25em 0 rgba(0,0,0,0.15);
 		cursor: default;
 		font-weight: _font(weight-bold);
-		height: 4em;
+		height: $header-height;
 		left: 0;
 		letter-spacing: _font(letter-spacing-alt);
 		line-height: 3.25em;
@@ -29,7 +34,13 @@
 		text-transform: uppercase;
 		top: 0;
 		width: 100%;
-		z-index: _misc(z-index-base);
+		z-index: 10000;
+    opacity: .8;
+		transition: opacity _duration(transition) ease-in-out;
+
+		&:hover {
+			opacity: 1;
+		}
 
 		.logo {
 			border: 0;
