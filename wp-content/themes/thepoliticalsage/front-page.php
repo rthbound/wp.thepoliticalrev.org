@@ -26,15 +26,12 @@
   <!-- Two -->
   <section id="two">
     <div class="inner">
-      <header class="major">
-        <h2>Let's do this</h2>
-      </header>
+      <?php while (have_posts()) {
+         the_post();
+         the_content();
+      }
+      ?>
 
-      <p>With your help, we can build a better United States for everyone, not just the top one percent.</p>
-
-      <ul class="actions">
-        <li><a href="{{ site.baseurl }}/fight" class="button next">Get Started</a></li>
-      </ul>
     </div>
   </section>
 </div>
