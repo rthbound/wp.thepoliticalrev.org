@@ -4,7 +4,7 @@
             <i class="fa fa-star star"></i> 
             <i class="fa fa-star star"></i> 
             <i class="fa fa-star star"></i> 
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/button.png" alt="TPR Logo"> 
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/button.svg" alt="TPR Logo"> 
             <i class="fa fa-star star"></i> 
             <i class="fa fa-star star"></i> 
             <i class="fa fa-star star"></i>
