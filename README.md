@@ -26,7 +26,8 @@ Installation is straight-foward.
 1. Clone the repository.
 1. Install [gulp](http://gulpjs.com) and [Bower](http://bower.io/) globally with `npm install -g gulp bower`
 2. In the root of the project, run `npm run-script build && npm start`.
-3. Navigate to http://localhost:8080/ and follow the instructions to create your local dev environment.
+3. Navigate to http://127.0.0.1:8080/ and follow the instructions to create your local dev environment.
+4. Go to http://127.0.0.1:8080/wp-admin and change the active theme to `thrpoliticalsage` to enable our theme.
 
 `npm start` runs gulp watch and starts the docker development server. Stopping gulp with `ctrl + C` and running `npm stop` will spin down your dev processes. To attach to the terminal of the local dev server, you may run `docker exec -it wpthepoliticalrevorg_my-wp_1 /bin/bash`. 
 
